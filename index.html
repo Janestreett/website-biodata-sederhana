@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akmal Fahreza - Portfolio</title>
+    
+    <!-- Import Font Modern & Tajam -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Palet Warna Navy & Clean White */
+            --bg-body: #F4F7F6;
+            --bg-surface: #FFFFFF;
+            --primary-navy: #0A2540;
+            --primary-blue: #0052FF;
+            --accent-green: #00875A;
+            --text-main: #2D3748;
+            --text-muted: #718096;
+            --border-color: #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            display: flex;
+            justify-content: center;
+            padding: 3rem 1.5rem;
+        }
+
+        /* Container Utama */
+        .resume-container {
+            max-width: 1050px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Header / Hero Section */
+        .header-section {
+            background-color: var(--primary-navy);
+            color: var(--bg-surface);
+            padding: 4rem 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(10, 37, 64, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Aksen dekoratif di dalam header */
+        .header-section::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(0, 82, 255, 0.2), transparent);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .header-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #82B1FF;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .header-class {
+            font-size: 1.1rem;
+            color: #A0AEC0;
+            font-weight: 300;
+        }
+
+        /* Layout Grid untuk Konten */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Styling Card (Kotak Konten) */
+        .content-card {
+            background-color: var(--bg-surface);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        h2.card-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2.card-heading::before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 4px;
+            background-color: var(--primary-blue);
+            border-radius: 2px;
+        }
+
+        p.description {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        /* List Keahlian / Fokus */
+        .skill-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .skill-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary-navy);
+        }
+
+        .skill-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .highlight-growth {
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background-color: var(--bg-surface);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-top: 1rem;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .link-group {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .action-link {
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.2s ease;
+        }
+
+        .action-link:hover {
+            color: var(--primary-navy);
+        }
+
+        /* Media Queries untuk Layar HP */
+        @media (max-width: 850px) {
+            .header-section {
+                padding: 3rem 2rem;
+                text-align: center;
+            }
+            .main-content {
+                grid-template-columns: 1fr; /* Menjadi satu baris ke bawah di HP */
+            }
+            footer {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        
+        <!-- Bagian Atas / Hero -->
+        <div class="header-section">
+            <span class="header-tagline">Future Investment Banker</span>
+            <h1>Akmal Fahreza</h1>
+            <div class="header-class">Siswa Kelas XII PPLG</div>
+        </div>
+
+        <!-- Bagian Konten (Dua Kolom di PC, Satu Kolom di HP) -->
+        <div class="main-content">
+            
+            <!-- Kolom Kiri: Profil & Visi -->
+            <div class="content-card">
+                <h2 class="card-heading">Profil Analitis</h2>
+                <p class="description">
+                    Sebagai siswa jurusan Pengembangan Perangkat Lunak dan Gim (PPLG), saya terbiasa memecahkan masalah kompleks melalui logika komputasional. Keahlian teknis ini saya padukan dengan minat yang kuat di sektor pasar modal dan keuangan global.
+                </p>
+                <p class="description">
+                    Fokus saya adalah menganalisis pergerakan aset, membaca tren ekonomi makro, serta memahami valuasi bisnis secara fundamental. Saya membangun fondasi literasi finansial ini sejak dini sebagai batu loncatan untuk menembus industri <strong>Investment Banking</strong> di masa depan.
+                </p>
+            </div>
+
+            <!-- Kolom Kanan: Area Keahlian (Tanpa Makanan) -->
+            <div class="content-card">
+                <h2 class="card-heading">Area Fokus Keuangan</h2>
+                <ul class="skill-list">
+                    <li class="skill-item">
+                        <span class="skill-title">Pasar Saham & Valuasi Korporat</span>
+                        <span class="skill-desc">Menganalisis laporan keuangan perusahaan, rasio profitabilitas, dan fundamental saham di bursa efek.</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-title">Volatilitas Cryptocurrency</span>
+                        <span class="skill-desc">Memetakan tren dan <span class="highlight-growth">korelasi harga</span> aset digital seperti Bitcoin terhadap pasar tradisional.</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-title">Dinamika Makroekonomi</span>
+                        <span class="skill-desc">Mempelajari dampak kebijakan moneter dan peristiwa geopolitik terhadap alur likuiditas global.</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Bagian Bawah / Tautan -->
+        <footer>
+            <div class="footer-text">
+                Tugas Praktik Web &bull; 2026
+            </div>
+            <div class="link-group">
+                <a href="https://www.idx.co.id" target="_blank" class="action-link">
+                    Referensi IDX <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/Janestreett" target="_blank" class="action-link">
+                    GitHub Profile <span>&rarr;</span>
+                </a>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
